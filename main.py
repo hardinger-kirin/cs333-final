@@ -110,8 +110,8 @@ def give_nicknames(player):
         print("")
         player.list_team()
         print("")
-        poke_choice = input("Enter the species of the Pokémon you would like to nickname or" 
-                            "\'e\' to stop nicknaming: ")
+        poke_choice = input("Enter the species of the Pokémon you would like to"
+                            "nickname or \'e\' to stop nicknaming: ")
         if poke_choice == 'e':
             break
 
