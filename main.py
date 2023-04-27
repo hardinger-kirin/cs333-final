@@ -11,19 +11,19 @@ import pokemon
 import move
 
 def intro():
-    print(f'                                      ,\'\\')
-    print(f'    _.----.        ____         ,\'  _\\   ___    ___     ____')
-    print(f'_,-\'       `.     |    |  /\`.   \\,-\'    |   \  /   |   |    \\  |`.')
-    print(f'\\      __    \\    \'-.  | /   `.  ___    |    \\/    |   \'-.   \\ |  |')
-    print(f' \\.    \\ \   |  __  |  |/    ,\',\'_  `.  |          | __  |    \\|  |')
-    print(f'   \\    \\/   /,\' _`.|      ,\' / / / /   |          ,\' _`.|     |  |')
-    print(f'    \\     ,-\'/  /   \\    ,\'   | \\/ / ,`.|         /  /   \\  |     |')
-    print(f'     \\    \\ |   \\_/  |   `-.  \\    `\'  /|  |    ||   \\_/  | |\    |')
-    print(f'      \\    \\ \      /       `-.`.___,-\' |  |\\  /| \\      /  | |   |')
-    print(f'       \\    \\ `.__,\'|  |`-._    `|      |__| \\/ |  `.__,\'|  | |   |')
-    print(f'        \\_.-\'       |__|    `-._ |             ')
-    print(f'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    print(f'Press enter to begin.')
+    print("                                      ,\'\\")
+    print("    _.----.        ____         ,\'  _\\   ___    ___     ____")
+    print("_,-\'       `.     |    |  /\`.   \\,-\'    |   \  /   |   |    \\  |`.")
+    print("\\      __    \\    \'-.  | /   `.  ___    |    \\/    |   \'-.   \\ |  |")
+    print(" \\.    \\ \   |  __  |  |/    ,\',\'_  `.  |          | __  |    \\|  |")
+    print("   \\    \\/   /,\' _`.|      ,\' / / / /   |          ,\' _`.|     |  |")
+    print("    \\     ,-\'/  /   \\    ,\'   | \\/ / ,`.|         /  /   \\  |     |")
+    print("     \\    \\ |   \\_/  |   `-.  \\    `\'  /|  |    ||   \\_/  | |\    |")
+    print("      \\    \\ \      /       `-.`.___,-\' |  |\\  /| \\      /  | |   |")
+    print("       \\    \\ `.__,\'|  |`-._    `|      |__| \\/ |  `.__,\'|  | |   |")
+    print("        \\_.-\'       |__|    `-._ |             ")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Press enter to begin.")
 
     # only move on if "enter" is pressed
     while True:
@@ -42,33 +42,44 @@ def choose_team(player):
     # default teams
     fire_team = [
     pokemon.Pokemon("","Charmander",39, \
-        [move.Move("Scratch", 4, 100), move.Move("Dragon Breath", 6, 92), move.Move("Fire Fang", 6.5, 90)]),
+        [move.Move("Scratch", 4, 100), move.Move("Dragon Breath", 6, 92), \
+        move.Move("Fire Fang", 6.5, 90)]),
     pokemon.Pokemon("","Scorbunny", 50, \
-        [move.Move("Tackle", 4, 100), move.Move("Flame Charge", 5, 95), move.Move("Bounce", 8.5, 80)]),
+        [move.Move("Tackle", 4, 100), move.Move("Flame Charge", 5, 95), \
+        move.Move("Bounce", 8.5, 80)]),
     pokemon.Pokemon("","Litten", 45, \
-        [move.Move("Ember", 4, 100), move.Move("Bite", 6, 91), move.Move("Flamethrower", 9, 75)])
+        [move.Move("Ember", 4, 100), move.Move("Bite", 6, 91), \
+        move.Move("Flamethrower", 9, 75)])
     ]
 
     grass_team = [
     pokemon.Pokemon("","Bulbasaur",45, \
-        [move.Move("Vine Whip", 4.5, 100), move.Move("Razor Leaf", 5.5, 93), move.Move("Seed Bomb", 8, 85)]),
+        [move.Move("Vine Whip", 4.5, 100), move.Move("Razor Leaf", 5.5, 93), \
+        move.Move("Seed Bomb", 8, 85)]),
     pokemon.Pokemon("","Rowlet", 68, \
-        [move.Move("Leafage", 4, 100), move.Move("Pluck", 6, 91), move.Move("Sucker Punch", 7, 88)]),
+        [move.Move("Leafage", 4, 100), move.Move("Pluck", 6, 91), \
+        move.Move("Sucker Punch", 7, 88)]),
     pokemon.Pokemon("","Chikorita", 45, \
-        [move.Move("Tackle", 4, 100), move.Move("Magical Leaf", 6, 92), move.Move("Body Slam", 8.5, 80)])
+        [move.Move("Tackle", 4, 100), move.Move("Magical Leaf", 6, 92), \
+        move.Move("Body Slam", 8.5, 80)])
     ]
 
     water_team = [
     pokemon.Pokemon("","Squirtle",44, \
-        [move.Move("Water Gun", 4, 100), move.Move("Bite", 6, 91), move.Move("Aqua Tail", 9, 75)]),
+        [move.Move("Water Gun", 4, 100), move.Move("Bite", 6, 91), \
+        move.Move("Aqua Tail", 9, 75)]),
     pokemon.Pokemon("","Oshawott", 55, \
-        [move.Move("Aqua Jet", 4, 100), move.Move("Water Pulse", 6, 91), move.Move("Aqua Tail", 8.5, 80)]),
+        [move.Move("Aqua Jet", 4, 100), move.Move("Water Pulse", 6, 91), \
+        move.Move("Aqua Tail", 8.5, 80)]),
     pokemon.Pokemon("","Mudkip", 50, \
-        [move.Move("Rock Smash", 4, 100), move.Move("Water Pulse", 6, 91), move.Move("Surf", 9, 75)])
+        [move.Move("Rock Smash", 4, 100), move.Move("Water Pulse", 6, 91), \
+        move.Move("Surf", 9, 75)])
     ]
 
-    print("Fire team!!! [1]\n\tCharmander, Scorbunny, and Litten\n\tSure to get you fired up!")
-    print("Grass team!!! [2]\n\tBulbasaur, Rowlet, and Chikorita\n\tBecome one with nature!")
+    print("Fire team!!! [1]\n\tCharmander, Scorbunny, and Litten\n\t"
+          "Sure to get you fired up!")
+    print("Grass team!!! [2]\n\tBulbasaur, Rowlet, and Chikorita\n\t"
+          "Become one with nature!")
     print("Water team!!! [3]\n\tSquirtle, Oshawott, and Mudkip\n\tRefreshing!")
 
     # choose team
@@ -89,7 +100,8 @@ def choose_team(player):
 def give_nicknames(player):
     nickname_choice = ""
     while nickname_choice != 'y' and nickname_choice != 'n':
-        nickname_choice = input(f'{player.get_name()}, would you like to nickname any of your Pokémon? [y/n] ')
+        nickname_choice = input(f'{player.get_name()}, would you like to nickname \
+        any of your Pokémon? [y/n] ')
     if nickname_choice == 'n':
         return
 
@@ -98,7 +110,8 @@ def give_nicknames(player):
         print("")
         player.list_team()
         print("")
-        poke_choice = input("Enter the species of the Pokémon you would like to nickname or \'e\' to stop nicknaming: ")
+        poke_choice = input("Enter the species of the Pokémon you would like to nickname or" 
+                            "\'e\' to stop nicknaming: ")
         if poke_choice == 'e':
             break
 
