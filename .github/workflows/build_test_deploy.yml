@@ -32,6 +32,11 @@ jobs:
         run: |
           coverage run Tests.py
           coverage report --data-file .coverage
+          # takes the last element from the previous statement - in this case, the overall code coverage.
+          coverage_percent=$(coverage report --fail-under=75  | tail -n 1 | awk '{print $NF}')
+          # fails if the code coverage is less than 75% so that the image is NOT pushed to Docker
+          if [ $(echo "$coverage_percent < 75" | bc) -eq 1 ]; then
+            exit 1
       - name: Checkout
         uses: actions/checkout@v3
       - name: Login to Docker Hub
