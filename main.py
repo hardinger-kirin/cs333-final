@@ -165,7 +165,7 @@ def main():
     intro()
     name = input("What is your name, young Trainer? ")
     player = trainer.Trainer(name)
-    comp = trainer.Trainer("Computer")
+    # comp = trainer.Trainer("Computer")
     print(f'It\'s great to meet you, {player.get_name()}')
     choose_team(player)
     give_nicknames(player)
