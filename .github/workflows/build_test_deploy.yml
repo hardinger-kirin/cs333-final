@@ -31,7 +31,7 @@ jobs:
       - name: Test and coverage report with unittest
         run: |
           coverage run Tests.py
-          coverage report --data-file tests/.coverage
+          coverage report --data-file .coverage
       - name: Checkout
         uses: actions/checkout@v3
       - name: Login to Docker Hub
