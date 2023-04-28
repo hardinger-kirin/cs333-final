@@ -10,20 +10,56 @@ import trainer
 import pokemon
 import move
 
+#formats text to colors
+class text_colors:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    WHITE = '\033[97m'
+    BLUE = '\033[94m'
+    END = '\033[0m'
+
+#displays a given string in a given color
+def color_print(string, color):
+    if color == 'r':
+        color = text_colors.RED
+    elif color == 'g':
+        color = text_colors.GREEN
+    elif color == 'y':
+        color = text_colors.YELLOW
+    elif color == 'b':
+        color = text_colors.BLUE
+    else:
+        color = text_colors.WHITE
+    
+    print(color + string + text_colors.END)
+
 def intro():
-    print("                                      ,\'\\")
-    print("    _.----.        ____         ,\'  _\\   ___    ___     ____")
-    print("_,-\'       `.     |    |  /\`.   \\,-\'    |   \  /   |   |    \\  |`.")
-    print("\\      __    \\    \'-.  | /   `.  ___    |    \\/    |   \'-.   \\ |  |")
-    print(" \\.    \\ \   |  __  |  |/    ,\',\'_  `.  |          | __  |    \\|  |")
-    print("   \\    \\/   /,\' _`.|      ,\' / / / /   |          ,\' _`.|     |  |")
-    print("    \\     ,-\'/  /   \\    ,\'   | \\/ / ,`.|         /  /   \\  |     |")
-    print("     \\    \\ |   \\_/  |   `-.  \\    `\'  /|  |    ||   \\_/  | |\    |")
-    print("      \\    \\ \      /       `-.`.___,-\' |  |\\  /| \\      /  | |   |")
-    print("       \\    \\ `.__,\'|  |`-._    `|      |__| \\/ |  `.__,\'|  | |   |")
-    print("        \\_.-\'       |__|    `-._ |             ")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("Press enter to begin.")
+    color_print("                                      ,\'\\",\
+        'y')
+    color_print("    _.----.        ____         ,\'  _\\   ___    ___     ____",\
+        'y')
+    color_print("_,-\'       `.     |    |  /\`.   \\,-\'    |   \  /   |   |    \\  |`.",\
+        'y')
+    color_print("\\      __    \\    \'-.  | /   `.  ___    |    \\/    |   \'-.   \\ |  |",\
+        'y')
+    color_print(" \\.    \\ \   |  __  |  |/    ,\',\'_  `.  |          | __  |    \\|  |",\
+        'y')
+    color_print("   \\    \\/   /,\' _`.|      ,\' / / / /   |          ,\' _`.|     |  |",\
+        'y')
+    color_print("    \\     ,-\'/  /   \\    ,\'   | \\/ / ,`.|         /  /   \\  |     |",\
+        'y')
+    color_print("     \\    \\ |   \\_/  |   `-.  \\    `\'  /|  |    ||   \\_/  | |\    |",\
+        'y')
+    color_print("      \\    \\ \      /       `-.`.___,-\' |  |\\  /| \\      /  | |   |",\
+        'y')
+    color_print("       \\    \\ `.__,\'|  |`-._    `|      |__| \\/ |  `.__,\'|  | |   |",\
+        'y')
+    color_print("        \\_.-\'       |__|    `-._ |             ",\
+        'y')
+    color_print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",\
+        'y')
+    color_print("Press enter to begin.", 'g')
 
     # only move on if "enter" is pressed
     while True:
@@ -76,11 +112,12 @@ def choose_team(player):
         move.Move("Surf", 9, 75)])
     ]
 
-    print("Fire team!!! [1]\n\tCharmander, Scorbunny, and Litten\n\t"
-          "Sure to get you fired up!")
-    print("Grass team!!! [2]\n\tBulbasaur, Rowlet, and Chikorita\n\t"
-          "Become one with nature!")
-    print("Water team!!! [3]\n\tSquirtle, Oshawott, and Mudkip\n\tRefreshing!")
+    color_print("Fire team!!! [1]\n\tCharmander, Scorbunny, and Litten\n\t"
+        "Sure to get you fired up!", 'r')
+    color_print("Grass team!!! [2]\n\tBulbasaur, Rowlet, and Chikorita\n\t"
+        "Become one with nature!", 'g')
+    color_print("Water team!!! [3]\n\tSquirtle, Oshawott, and Mudkip\n\tRefreshing!", \
+        'b')
 
     # choose team
     team_choice = ""
@@ -89,19 +126,19 @@ def choose_team(player):
         
     if team_choice == '1':
         player.set_team(fire_team)
-        print("You have chosen the fire team!")
+        color_print("You have chosen the fire team!", 'r')
     elif team_choice == '2':
         player.set_team(grass_team)
-        print("You have chosen the grass team!")
+        color_print("You have chosen the grass team!", 'g')
     elif team_choice == '3':
         player.set_team(water_team)
-        print("You have chosen the water team!")
+        color_print("You have chosen the water team!", 'b')
 
 def give_nicknames(player):
     nickname_choice = ""
     while nickname_choice != 'y' and nickname_choice != 'n':
-        nickname_choice = input(f'{player.get_name()}, would you like to nickname \
-        any of your Pokémon? [y/n] ')
+        nickname_choice = input(f'{player.get_name()}, would you like to nickname '
+                                'any of your Pokémon? [y/n] ')
     if nickname_choice == 'n':
         return
 
@@ -110,7 +147,7 @@ def give_nicknames(player):
         print("")
         player.list_team()
         print("")
-        poke_choice = input("Enter the species of the Pokémon you would like to"
+        poke_choice = input("Enter the species of the Pokémon you would like to "
                             "nickname or \'e\' to stop nicknaming: ")
         if poke_choice == 'e':
             break
@@ -119,14 +156,16 @@ def give_nicknames(player):
         if selected_pokemon is not None:
             new_name = input(f'Enter a new nickname for {poke_choice}: ')
             selected_pokemon.set_nickname(new_name)
-            print(f'{poke_choice} is now {selected_pokemon.get_nickname()}!')
+            color_print(f'~*~{poke_choice} is now {selected_pokemon.get_nickname()}!~*~',\
+                'g')
         else:
-            print("Could not find that Pokémon on your team. Please try again")
+            color_print("Could not find that Pokémon on your team. Please try again", 'r')
 
 def main():
     intro()
     name = input("What is your name, young Trainer? ")
     player = trainer.Trainer(name)
+    comp = trainer.Trainer("Computer")
     print(f'It\'s great to meet you, {player.get_name()}')
     choose_team(player)
     give_nicknames(player)
