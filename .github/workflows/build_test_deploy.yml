@@ -37,6 +37,7 @@ jobs:
           # fails if the code coverage is less than 75% so that the image is NOT pushed to Docker
           if [ $(echo "$coverage_percent < 75" | bc) -eq 1 ]; then
             exit 1
+          fi
       - name: Checkout
         uses: actions/checkout@v3
       - name: Login to Docker Hub
