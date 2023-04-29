@@ -3,7 +3,7 @@ import pokemon
 import move
 import battle_helper
 
-# This test suite has 6 integration tests and 17 unit tests.
+# This test suite has 6 integration tests and 19 unit tests.
 
 import unittest
 class TestMethods(unittest.TestCase):
@@ -125,7 +125,7 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(test_trainer.get_team_size(), 3)
     
     #UNIT TESTS FOR POKEMON CLASS ****************************
-    def test_get_name(self):
+    def test_get_pokemon_name(self):
         test_pokemon = pokemon.Pokemon("", "Charmander", 39, [])
         self.assertEqual(test_pokemon.get_name(), "Charmander")
 
@@ -144,7 +144,7 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(test_pokemon.get_hp(), 39)
 
     #UNIT TESTS FOR MOVE CLASS ********************************
-    def test_get_name(self):
+    def test_get_move_name(self):
         test_move = move.Move("Scratch", 4, 100)
         self.assertEqual(test_move.get_name(), "Scratch")
     
@@ -166,6 +166,18 @@ class TestMethods(unittest.TestCase):
         test_pokemon = pokemon.Pokemon("", "Charmander", 39, [])
         test_pokemon.set_hp(10)
         self.assertFalse(battle_helper.check_faint(test_pokemon))
+    
+    def test_check_attack_true(self):
+        test_ace1 = pokemon.Pokemon("", "Charmander", 39, \
+            [move.Move("Scratch", 4, 100)])
+        test_ace2 = pokemon.Pokemon("", "Scorbunny", 50, [])
+        self.assertTrue(battle_helper.check_attack(test_ace1, test_ace2, test_ace1.get_moves()[0]))
+    
+    def test_check_attack_false(self):
+        test_ace1 = pokemon.Pokemon("", "Charmander", 39, \
+            [move.Move("Scratch", 4, 0)])
+        test_ace2 = pokemon.Pokemon("", "Scorbunny", 50, [])
+        self.assertFalse(battle_helper.check_attack(test_ace1, test_ace2, test_ace1.get_moves()[0]))
     
     #INTEGRATION TESTS FOR TRAINER AND POKEMON CLASS***********
     def test_find_pokemon_by_name_valid(self):

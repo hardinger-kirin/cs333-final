@@ -158,7 +158,7 @@ def battle(player1, p1_color, player2, p2_color):
             move_choice = input("Enter the number of the move you would like to use: ")
         
         # player 1 uses move
-        if player1.get_ace().attack(player2.get_ace(), player1.get_ace().get_moves()[int(move_choice)]) != 0:
+        if battle_helper.check_attack(player1.get_ace(), player2.get_ace(), player1.get_ace().get_moves()[int(move_choice)]):
             color_print(f'{p1_mon} dealt {player1.get_ace().get_moves()[int(move_choice)].get_damage()} damage!', p1_color)
         else:
             color_print(f'{p1_mon} missed!', p1_color)
@@ -189,7 +189,7 @@ def battle(player1, p1_color, player2, p2_color):
             move_choice = input("Enter the number of the move you would like to use: ")
         
         # player 2 uses move
-        if player2.get_ace().attack(player1.get_ace(), player2.get_ace().get_moves()[int(move_choice)]) != 0:
+        if battle_helper.check_attack(player2.get_ace(), player1.get_ace(), player2.get_ace().get_moves()[int(move_choice)]):
             color_print(f'{p2_mon} dealt {player2.get_ace().get_moves()[int(move_choice)].get_damage()} damage!', p2_color)
         else:
             color_print(f'{p2_mon} missed!', p2_color)
