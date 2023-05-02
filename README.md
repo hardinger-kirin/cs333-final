@@ -10,8 +10,11 @@ Enjoy a mini version of a Pokémon battle simulator! Play locally with a friend 
 ## How to run
 To most reliably run this code and ensure all dependencies are included, a Docker image can be pulled at this repository: https://hub.docker.com/repository/docker/khardinger/cs333-final/general
 
-The main program can be executed by calling the following in a UNIX-based terminal:
-`python3 main.py`
+The main program can be executed using Docker by pulling the latest image from Dockerhub, then running it using the following command:
+
+`docker run -i khardinger/cs333-final:latest`
+
+__It is important that the `-i` is included so that it is run interactively!__
 
 ## Testing information
 Testing is executed using Python's `unittest` and measured using `Coverage.py`
