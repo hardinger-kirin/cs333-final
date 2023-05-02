@@ -45,4 +45,7 @@ Updated workflow so that image is only pushed to Docker if test suite passes wit
 <b>29th-April-2023</b>    
 Final functionality and testing is implemented
 
+<b>1st-May-2023</b>    
+Dockerfile and README is updated for instructions on how to run the project using Docker
+
 # Thank you for stopping by!
