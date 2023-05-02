@@ -1,7 +1,7 @@
 FROM khardinger/cs333-final:latest
 
-RUN apk update
-RUN apk add python3 py3-pip
+RUN apt update
+RUN apt install python3 -y
 RUN mkdir app
 WORKDIR /app
 COPY main.py app/main.py
