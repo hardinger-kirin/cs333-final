@@ -4,6 +4,7 @@ import move
 import battle_helper
 
 # This test suite has 6 integration tests and 19 unit tests.
+# This is a change!
 
 import unittest
 class TestMethods(unittest.TestCase):
