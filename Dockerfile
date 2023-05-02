@@ -1,8 +1,6 @@
 FROM khardinger/cs333-final:latest
 
-RUN apk update
-RUN apk add python3 py3-pip
-RUN apk add vim
-RUN apk add curl
+WORKDIR /app
+COPY . /app
 
-ENTRYPOINT ["python3", "main.py"]
+CMD ["python3", "main.py"]
