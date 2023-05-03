@@ -210,6 +210,7 @@ def battle(player1, p1_color, player2, p2_color):
         print("")
 
 def main():
+    print("THIS IS NEW!")
     intro()
 
     # player one
